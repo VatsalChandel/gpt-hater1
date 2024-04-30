@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 import openai
-from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 
 # GPT keys
 OPENAPI_BASE = "https://openaiglazko.openai.azure.com/"
@@ -12,11 +10,8 @@ OPENAPI_DEPLOYMENT = "GPT35"
 
 
 # Database keys
-DATABASE_URI = "sqlite:///user_history.db"
-SESSION_DB_KEY = "ysecret_key"
 
 app = Flask(__name__)
-app.secret_key = SESSION_DB_KEY
 
 openai.api_base = OPENAPI_BASE
 openai.api_key = OPENAPI_KEY
